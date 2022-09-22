@@ -8,13 +8,6 @@ of 4000-10000 K. But note that the temperature range varies depending on the ban
 for out-of-range input values, but rather assignment of boundary values.
 
 # How to Install
-## From source
-extinction_coeffcient can be installed from the source code after downloading it from the git repo (https://github.com/vnohhf/extinction_coeffcient/):
-
-~~~
-python setup.py install
-~~~
-
 ## Using pip
 dust_extinction can be installed using pip:
 
@@ -24,6 +17,13 @@ pip install extinction_coeffcient
 
 # from the master trunk on the repository, considered developmental code
 pip install git+https://github.com/vnohhf/extinction_coeffcient.git
+~~~
+
+## From source
+extinction_coeffcient can be installed from the source code after downloading it from the git repo (https://github.com/vnohhf/extinction_coeffcient/):
+
+~~~
+python setup.py install
 ~~~
 
 # Quick Start 
