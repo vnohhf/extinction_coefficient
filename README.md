@@ -1,11 +1,18 @@
 # extinction_coeffcient
 
-extinction_coeffcient is a python package to provide empirical extinction or reddening coefficients 
-from far-ultraviolet (UV) to the mid-infrared (IR).
+extinction_coeffcient is a python package to provide ** empirical extinction or reddening coefficients ** from far-ultraviolet (UV) to the mid-infrared (IR).
 
 Our coefficients are mostly valid in the extinction range of 0-0.5 mag and the temperature range 
 of 4000-10000 K. But note that the temperature range varies depending on the band. No extrapolation
 for out-of-range input values, but rather assignment of boundary values.
+
+### Available photometric survey and passband names
+- GALEX passbands: "FUV", "NUV"; 
+- Pan-STARRS 1 passbands: "g", "r", "i", "z", "y"; 
+- SDSS passbands: "u'", "g'", "r'", "i'", "z'";
+- Gaia DR3 passbands: "BP", "G", "RP";
+- 2MASS passbands: "J", "H", "Ks";
+- WISE passbands: "W1", "W2", "W3", "W4";
 
 # How to Install
 ### Using pip
@@ -62,9 +69,9 @@ Args:
             the two passband name strings (e.g. "BP-RP"). There support GALEX passbands: "FUV", "NUV"; 
             Pan-STARRS 1 passbands: "g", "r", "i", "z", "y"; 
             SDSS passbands: "u'", "g'", "r'", "i'", "z'";
+            Gaia DR3 passbands: "BP", "G", "RP";
             2MASS passbands: "J", "H", "Ks";
             WISE passbands: "W1", "W2", "W3", "W4";
-            Gaia DR3 passbands: "BP", "G", "RP";
             
     EBV: float or array-like, shape (n, ), optional
             The E(B-V), in magnitude.
@@ -76,9 +83,9 @@ Args:
             The effective temperature, in Kelvins.
             
     mode: {'func', 'simple'} (default: 'func')
-        The calculate mode of extinction or reddening coefficients. Possible values:
-        'func': interpolation results on functions of Teff and E(B-V).
-        'simple': single value coefficients obtained when temperature and extinction are not considered.
+            The calculate mode of extinction or reddening coefficients. Possible values:
+            'func': interpolation results on functions of Teff and E(B-V).
+            'simple': single value coefficients obtained when temperature and extinction are not considered.
 
 Returns: float or array-like, shape (n, )
     Empirical extinction or reddening coefficients. Has the largest shape as the input obj:`Band`, obj:`EBV`, 
