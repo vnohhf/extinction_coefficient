@@ -6,7 +6,7 @@ Our coefficients are mostly valid in the extinction range of 0-0.5 mag and the t
 of 4000-10000 K. But note that the temperature range varies depending on the band. No extrapolation
 for out-of-range input values, but rather assignment of boundary values.
 
-### Available photometric survey and passband names
+### Available photometric surveys and passband names
 - GALEX passbands: "FUV", "NUV"; 
 - Pan-STARRS 1 passbands: "g", "r", "i", "z", "y"; 
 - SDSS passbands: "u'", "g'", "r'", "i'", "z'";
