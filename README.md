@@ -9,8 +9,6 @@ for out-of-range input values, but rather assignment of boundary values.
 
 # How to Install
 ### Using pip
-dust_extinction can be installed using pip:
-
 ~~~python
 # from PyPI
 pip install extinction_coeffcient
@@ -21,7 +19,6 @@ pip install git+https://github.com/vnohhf/extinction_coeffcient.git
 
 ### From source
 extinction_coeffcient can be installed from the source code after downloading it from the git repo (https://github.com/vnohhf/extinction_coeffcient/):
-
 ~~~
 python setup.py install
 ~~~
