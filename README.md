@@ -11,7 +11,9 @@ for out-of-range input values, but rather assignment of boundary values.
 ## From source
 extinction_coeffcient can be installed from the source code after downloading it from the git repo (https://github.com/vnohhf/extinction_coeffcient/):
 
+~~~
 python setup.py install
+~~~
 
 ## Using pip
 dust_extinction can be installed using pip:
