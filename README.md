@@ -27,7 +27,7 @@ pip install git+https://github.com/vnohhf/extinction_coeffcient.git
 ~~~
 
 # Quick Start 
-To get a single value extinction or reddening coefficients obtained when temperature and extinction are not considered, just input mode='simple':
+To get a single value extinction or reddening coefficients obtained when temperature and extinction are not considered, just put mode = 'simple':
 ~~~python
 extinction_coeffcient('g', mode='simple')
 extinction_coeffcient('BP-RP', mode='simple')
@@ -47,7 +47,7 @@ Teff = 5500
 extinction_coeffcient(Band,EBV=EBV,Teff=Teff)
 ~~~
 
-If Teff is unknown in advance, the observed (BP-RP) color can be entered as a substitute. This program will convert BP_RP to Teff by an empirical polynomial relationship.
+If Teff is unknown in advance, the observed (BP-RP) color can be entered as a substitute. This program will convert BP_RP to Teff by an empirical polynomial relationship:
 ~~~python
 Band = ["BP-RP","FUV-g","i'-z'"]
 EBV = [0.1, 0.3, 0.5]
