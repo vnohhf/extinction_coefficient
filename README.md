@@ -10,7 +10,7 @@ for out-of-range input values, but rather assignment of boundary values.
 # How to Install
 ### Using pip
 ~~~python
-# from PyPI
+# from PyPI (recommmand)
 pip install extinction_coeffcient
 
 # from the master trunk on the repository, considered developmental code
