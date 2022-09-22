@@ -1,0 +1,10 @@
+LICENSE.rtf
+README.md
+setup.py
+extinction_coeffcient/__init__.py
+extinction_coeffcient/extinction_coeffcient.py
+extinction_coeffcient.egg-info/PKG-INFO
+extinction_coeffcient.egg-info/SOURCES.txt
+extinction_coeffcient.egg-info/dependency_links.txt
+extinction_coeffcient.egg-info/requires.txt
+extinction_coeffcient.egg-info/top_level.txt
