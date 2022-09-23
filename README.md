@@ -51,7 +51,7 @@ Teff = 5500
 extinction_coeffcient(Band,EBV=EBV,Teff=Teff)
 ~~~
 
-If Teff is unknown in advance, the observed (BP-RP) color can be entered as a substitute. This program first makes a rough reddening correction to the observed (BP-RP) and then converts them to Teff using an empirical polynomial relationship between (BP-RP)0 and Teff. This allows the exact reddening factor to be obtained using Teff, and then the procedure iterates once.
+If Teff is unknown in advance, the observed (BP-RP) color can be entered as a substitute. This program first makes a rough reddening correction to the observed (BP-RP) and then converts them to Teff using an empirical polynomial relationship between intrinsic color (BP-RP)0 and Teff. This allows the exact reddening factor to be obtained using Teff, and then the procedure iterates once.
 ~~~python
 Band = ["BP-RP","FUV-g","i'-z'"]
 EBV = [0.1, 0.3, 0.5]
