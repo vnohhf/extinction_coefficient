@@ -33,6 +33,7 @@ python setup.py install
 # Quick Start 
 To get a single value extinction or reddening coefficients obtained when temperature and extinction are not considered, just put mode = 'simple':
 ~~~python
+from extinction_coeffcient import extinction_coeffcient
 extinction_coeffcient('g', mode='simple')
 extinction_coeffcient('BP-RP', mode='simple')
 extinction_coeffcient(["BP-RP","FUV-g"], mode='simple')
