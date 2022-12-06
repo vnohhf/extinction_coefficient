@@ -1,6 +1,8 @@
 # extinction_coeffcient
 
-extinction_coeffcient is a python package to provide **empirical extinction or reddening coefficients** from far-ultraviolet (UV) to the mid-infrared (IR).
+extinction_coeffcient is a astronomy Python package to provide **empirical extinction or reddening coefficients** from far-ultraviolet (UV) to the mid-infrared (IR).
+For a given band *a*, the extinction coefficient is defined as E(a)/E(B-V), i.e. extinction in *a* band relative to E(B−V);
+Similarly, for a given color *a-b*, the reddening coefficient is defined as E(a-b)/E(B-V).
 
 Our coefficients are mostly valid in the extinction range of 0-0.5 mag and the temperature range 
 of 4000-10000 K. But note that the temperature range varies depending on the band. No extrapolation
