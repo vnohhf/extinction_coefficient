@@ -2,8 +2,8 @@ import setuptools
 with open("README.md", "r") as fh:
     long_description = fh.read()
 setuptools.setup(
-    name="extinction_coeffcient",
-    version="1.1",
+    name="extinction_coefficient",
+    version="1.3",
     author="Zhang,Ruoyi",
     author_email="zry@mail.bnu.edu.cn",
     description="A package to inquire empirical extinction or reddening coefficients from far-ultraviolet (UV) to the mid-infrared (IR)",

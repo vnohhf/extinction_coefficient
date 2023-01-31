@@ -1,13 +1,13 @@
 '''
 Author       : Zhang,Ruoyi
-Date         : 2022-09-23 
-Version      : 1.2
+Date         : 2023-01-31
+Version      : 1.3
 E-mail       : zry@mail.bnu.edu.cn
-Description  : Copyright© 2022 Zhang,Ruoyi. ALL RIGHTS RESERVED.
+Description  : Copyright© 2023 Zhang,Ruoyi. ALL RIGHTS RESERVED.
 
 '''
 
-def extinction_coeffcient(Band,EBV=[],BP_RP=[],Teff=[],mode='func'):
+def extinction_coefficient(Band,EBV=[],BP_RP=[],Teff=[],mode='func'):
     """
     Retruns empirical extinction or reddening coefficients, which are single value coefficients obtained
     when temperature and extinction are not considered or coefficients for (a group of) specific Teff and
@@ -56,7 +56,7 @@ def extinction_coeffcient(Band,EBV=[],BP_RP=[],Teff=[],mode='func'):
     import numpy as np
     import pandas as pd
     
-    #* Necessary data of extinction coeffcient 
+    #* Necessary data of extinction coefficient 
     R_function_coefficients = pd.DataFrame({"FUV": [6.973, 4.68e-10, -1.26e-05, 0.112, 6.520, -10.401, -319.943],
                                             "NUV": [7.293, 2.57e-12, -5.19e-07, 0.0076, -1.022, -3.608, -19.704],
                                             "g"  : [3.248, -8.98e-11, 1.72e-06, -0.0108, -0.556, -0.712, 25.885],
@@ -90,15 +90,14 @@ def extinction_coeffcient(Band,EBV=[],BP_RP=[],Teff=[],mode='func'):
 
 
     #* Check whether the entered value is valid
-    def Check_input(inputA,inputB,inputC): 
+    def isnumeric(obj): # check if a variable is a number
+        try:
+            float(obj)
+            return True
+        except ValueError or TypeError:
+            return False
 
-        def isnumeric(obj): # check if a variable is a number
-            try:
-                float(obj)
-                return True
-            except ValueError or TypeError:
-                return False
-        
+    def Check_input(inputA,inputB,inputC): 
         # Create a list to store whether the input variables is sequence type
         TypeList = np.array([np.nan, np.nan, np.nan])
         SequenceType = (list, tuple, np.ndarray, pd.Series)
@@ -128,7 +127,7 @@ def extinction_coeffcient(Band,EBV=[],BP_RP=[],Teff=[],mode='func'):
             if TypeList[2]==2:
                 inputc = np.array([inputC for _ in range(len(sequence_inputs[0]))])
         else:
-            s=True #mark if all inputs are not array
+            s=True # mark if all inputs are not array
             return np.array([inputA]), np.array([inputB]), np.array([inputC]), s
 
         return np.array(inputa), np.array(inputb), np.array(inputc), False
@@ -154,8 +153,8 @@ def extinction_coeffcient(Band,EBV=[],BP_RP=[],Teff=[],mode='func'):
 
         return band, R_function_coefficients, teff_range
 
-    #* core function to calculate extinction coeffcient
-    def extinction_coeffcient_core(band,ebv,teff,teff_range,R_function_coefficients):
+    #* core function to calculate extinction coefficient
+    def extinction_coefficient_core(band,ebv,teff,teff_range,R_function_coefficients):
         # Assignment of boundary values
         lowerLimit,upperLimit = teff_range[band].to_numpy()
         teff[teff < lowerLimit] = lowerLimit[teff < lowerLimit]
@@ -171,16 +170,16 @@ def extinction_coeffcient(Band,EBV=[],BP_RP=[],Teff=[],mode='func'):
     
     if mode=='simple': # If only ask for single-value R
         
-        return R_function_coefficients[band].iloc[0].to_numpy()
+        return [band].iloc[0].to_numpy()
     
     elif mode=='func': # If ask for R(EBV,Teff)
     
-        if len(Teff) != 0: # calculate R(EBV,Teff)
+        if Teff != []: # calculate R(EBV,Teff)
             
             band,ebv,teff,s = Check_input(Band,EBV,Teff)
                     
         #* If Teff is not input, the input (BP-RP) will be deredden and roughly converted to Teff using a empirical relationship
-        elif len(BP_RP) != 0: # calculate R(EBV,BPRP0)
+        elif BP_RP != []: # calculate R(EBV,BPRP0)
             # A fourth-order polynomial is used in advance to fit the (BP-RP)0-Teff relationship, and the resulting coefficients
             Teff_BPRP0_coeff = [1187.26193963, -4925.6478914, 8268.06749031, -9038.59055765,9693.00903561]
             band,ebv,bp_rp,s = Check_input(Band,EBV,BP_RP)
@@ -191,15 +190,15 @@ def extinction_coeffcient(Band,EBV=[],BP_RP=[],Teff=[],mode='func'):
             
             # iterated BPRP0
             bandnameLi = np.array(["BP-RP" for _ in range(len(ebv))])
-            BPRP0 = bp_rp - extinction_coeffcient_core(bandnameLi,ebv,fitTeff,teff_range,R_function_coefficients) * ebv
+            BPRP0 = bp_rp - extinction_coefficient_core(bandnameLi,ebv,fitTeff,teff_range,R_function_coefficients) * ebv
             
             # convert to Teff
             teff = np.polyval(Teff_BPRP0_coeff, BPRP0) 
             
         else: raise ValueError('Missing input value')
         
-        # calculate extinction coeffcient
-        return_value = extinction_coeffcient_core(band,ebv,teff,teff_range,R_function_coefficients)
+        # calculate extinction coefficient
+        return_value = extinction_coefficient_core(band,ebv,teff,teff_range,R_function_coefficients)
         
         if s: return return_value[0]
         else: return return_value
