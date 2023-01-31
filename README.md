@@ -48,7 +48,8 @@ Band = 'BP'
 EBV  = 0.3
 Teff = [5000, 6000]
 extinction_coefficient(Band,EBV=EBV,Teff=Teff)
-
+~~~
+~~~python
 Band = np.array(["BP-RP","FUV-g","y-H","u'-W2"])
 EBV  = [0.1, 0.1, 0.3, 0.5]
 Teff = 5500
