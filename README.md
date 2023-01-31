@@ -14,7 +14,7 @@ for out-of-range input values, but rather assignment of boundary values.
 - SDSS passbands: "u'", "g'", "r'", "i'", "z'";
 - Gaia DR3 passbands: "BP", "G", "RP";
 - 2MASS passbands: "J", "H", "Ks";
-- WISE passbands: "W1", "W2", "W3", "W4";
+- WISE passbands: "W1", "W2", "W3", "W4".
 
 # How to Install
 ### Using pip
@@ -44,12 +44,12 @@ extinction_coefficient(["BP-RP","FUV-g"], mode='simple')
 To obtain extinction or reddening coefficients for (a group of) specific Teff and E(B-V):
 ~~~python
 Band = 'BP'
-EBV = 0.3
+EBV  = 0.3
 Teff = [5000, 6000]
 extinction_coefficient(Band,EBV=EBV,Teff=Teff)
 
 Band = np.array(["BP-RP","FUV-g","y-H","u'-W2"])
-EBV = [0.1, 0.1, 0.3, 0.5]
+EBV  = [0.1, 0.1, 0.3, 0.5]
 Teff = 5500
 extinction_coefficient(Band,EBV=EBV,Teff=Teff)
 ~~~
@@ -57,7 +57,7 @@ extinction_coefficient(Band,EBV=EBV,Teff=Teff)
 If Teff is unknown in advance, the observed (BP-RP) color can be entered as a substitute. This program first makes a rough reddening correction to the observed (BP-RP) and then converts them to Teff using an empirical polynomial relationship between intrinsic color (BP-RP)0 and Teff. This allows the exact reddening factor to be obtained using Teff, and then the procedure iterates once.
 ~~~python
 Band = ["BP-RP","FUV-g","i'-z'"]
-EBV = [0.1, 0.3, 0.5]
+EBV  = [0.1, 0.3, 0.5]
 BP_RP = np.array([0.3, 0.6, 1.2])
 extinction_coefficient(Band,EBV=EBV,BP_RP=BP_RP)
 ~~~
