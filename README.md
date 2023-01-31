@@ -1,6 +1,6 @@
-# extinction_coeffcient
+# extinction_coefficient
 
-extinction_coeffcient is a astronomy Python package to provide **empirical extinction or reddening coefficients** from far-ultraviolet (UV) to the mid-infrared (IR).
+extinction_coefficient is a astronomy Python package to provide **empirical extinction or reddening coefficients** from far-ultraviolet (UV) to the mid-infrared (IR).
 For a given band *a*, the extinction coefficient is defined as E(a)/E(B-V), i.e. extinction in *a* band relative to E(B−V);
 Similarly, for a given color *a-b*, the reddening coefficient is defined as E(a-b)/E(B-V).
 
@@ -20,14 +20,14 @@ for out-of-range input values, but rather assignment of boundary values.
 ### Using pip
 ~~~python
 # from PyPI (recommmand)
-pip install extinction_coeffcient
+pip install extinction_coefficient
 
 # from the master trunk on the repository, considered developmental code
 pip install git+https://github.com/vnohhf/extinction_coeffcient.git
 ~~~
 
 ### From source
-extinction_coeffcient can be installed from the source code after downloading it from the git repo (https://github.com/vnohhf/extinction_coeffcient/):
+extinction_coefficient can be installed from the source code after downloading it from the git repo (https://github.com/vnohhf/extinction_coeffcient/):
 ~~~
 python setup.py install
 ~~~
@@ -35,10 +35,10 @@ python setup.py install
 # Quick Start 
 To get a single value extinction or reddening coefficients obtained when temperature and extinction are not considered, just put mode = 'simple':
 ~~~python
-from extinction_coeffcient import extinction_coeffcient
-extinction_coeffcient('g', mode='simple')
-extinction_coeffcient('BP-RP', mode='simple')
-extinction_coeffcient(["BP-RP","FUV-g"], mode='simple')
+from extinction_coefficient import extinction_coefficient
+extinction_coefficient('g', mode='simple')
+extinction_coefficient('BP-RP', mode='simple')
+extinction_coefficient(["BP-RP","FUV-g"], mode='simple')
 ~~~
 
 To obtain extinction or reddening coefficients for (a group of) specific Teff and E(B-V):
@@ -46,12 +46,12 @@ To obtain extinction or reddening coefficients for (a group of) specific Teff an
 Band = 'BP'
 EBV = 0.3
 Teff = [5000, 6000]
-extinction_coeffcient(Band,EBV=EBV,Teff=Teff)
+extinction_coefficient(Band,EBV=EBV,Teff=Teff)
 
-Band = np.array(["BP-RP","FUV-g","y-H","u'-W2"],
+Band = np.array(["BP-RP","FUV-g","y-H","u'-W2"]),
 EBV = [0.1, 0.1, 0.3, 0.5]
 Teff = 5500
-extinction_coeffcient(Band,EBV=EBV,Teff=Teff)
+extinction_coefficient(Band,EBV=EBV,Teff=Teff)
 ~~~
 
 If Teff is unknown in advance, the observed (BP-RP) color can be entered as a substitute. This program first makes a rough reddening correction to the observed (BP-RP) and then converts them to Teff using an empirical polynomial relationship between intrinsic color (BP-RP)0 and Teff. This allows the exact reddening factor to be obtained using Teff, and then the procedure iterates once.
@@ -59,12 +59,12 @@ If Teff is unknown in advance, the observed (BP-RP) color can be entered as a su
 Band = ["BP-RP","FUV-g","i'-z'"]
 EBV = [0.1, 0.3, 0.5]
 BP_RP = np.array([0.3, 0.6, 1.2])
-extinction_coeffcient(Band,EBV=EBV,BP_RP=BP_RP)
+extinction_coefficient(Band,EBV=EBV,BP_RP=BP_RP)
 ~~~
 
 # API
 ~~~
-extinction_coeffcient(Band,EBV=None,BP_RP=None,Teff=None,mode='func')
+extinction_coefficient(Band,EBV=None,BP_RP=None,Teff=None,mode='func')
 
 Args:
     Band: str or array-like, shape (n, )
