@@ -1,3 +1,3 @@
-__all__ = ['extinction_coeffcient']
+__all__ = ['extinction_coefficient']
  
-from extinction_coeffcient.extinction_coeffcient import *
+from extinction_coefficient.extinction_coefficient import *

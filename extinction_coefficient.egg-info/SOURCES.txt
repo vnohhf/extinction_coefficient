@@ -2,7 +2,7 @@ LICENSE.rtf
 README.md
 setup.py
 extinction_coefficient/__init__.py
-extinction_coefficient/extinction_coeffcient.py
+extinction_coefficient/extinction_coefficient.py
 extinction_coefficient.egg-info/PKG-INFO
 extinction_coefficient.egg-info/SOURCES.txt
 extinction_coefficient.egg-info/dependency_links.txt
