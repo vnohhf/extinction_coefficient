@@ -1,7 +1,7 @@
 '''
 Author       : Zhang,Ruoyi
 Date         : 2023-01-31
-Version      : 1.6
+Version      : 1.7
 E-mail       : zry@mail.bnu.edu.cn
 Description  : Copyright© 2023 Zhang,Ruoyi. ALL RIGHTS RESERVED.
 
@@ -194,6 +194,7 @@ def extinction_coefficient(Band,EBV=[],BP_RP=[],Teff=[],mode='func'):
             
             # convert to Teff
             teff = np.polyval(Teff_BPRP0_coeff, BPRP0) 
+            teff[BPRP0>1.61] = 4000 # Maximum BPRP0 supported by the relationship
             
         else: raise ValueError('Missing input value')
         
