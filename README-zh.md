@@ -77,7 +77,7 @@ Args:
             The passband or color index. If color index are entered, '-' need to be used to connect 
             the two passband name strings (e.g. "BP-RP"). There support GALEX passbands: "FUV", "NUV"; 
             Pan-STARRS 1 passbands: "g", "r", "i", "z", "y"; 
-            SDSS passbands: "u'", "g'", "r'", "i'", "z'"; (此处字母后还有一个')
+            SDSS passbands: "u'", "g'", "r'", "i'", "z'";
             Gaia DR3 passbands: "BP", "G", "RP";
             2MASS passbands: "J", "H", "Ks";
             WISE passbands: "W1", "W2", "W3", "W4";
