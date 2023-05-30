@@ -12,12 +12,15 @@
 对于超出范围的输入值，我们没有对函数进行外推，而是分配边界值。
 
 ### 可用的测光巡天项目和波段名称
-- GALEX passbands: "FUV", "NUV"; 
-- Pan-STARRS 1 passbands: "g", "r", "i", "z", "y"; 
-- SDSS passbands: "u'", "g'", "r'", "i'", "z'"; (此处字母后还有一个`'`)
-- Gaia DR3 passbands: "BP", "G", "RP";
-- 2MASS passbands: "J", "H", "Ks";
-- WISE passbands: "W1", "W2", "W3", "W4".
+*Note*: 代码中使用的波段名称需要与表格一致。SDSS的波段名称中含有`'`。
+|  测光巡天        | 波段                |
+|  :--:           | :--:               |
+|  GALEX          | FUV, NUV           |
+|  Pan-STARRS 1   | g, r, i, z, y      |
+|  SDSS           | u', g', r', i', z' |
+|  Gaia           | BP, G, RP          |
+|  2MASS          | J, H, Ks           |
+|  WISE           | W1, W2, W3, W4     |
 
 # 如何安装
 ### 使用 pip
