@@ -13,12 +13,16 @@ of 4000-10000 K. But note that the temperature range varies depending on the ban
 for out-of-range input values, but rather assignment of boundary values. 
 
 ### Available photometric surveys and passband names
-- GALEX passbands: "FUV", "NUV"; 
-- Pan-STARRS 1 passbands: "g", "r", "i", "z", "y"; 
-- SDSS passbands: "u'", "g'", "r'", "i'", "z'"; (Note the `'` after letter)
-- Gaia DR3 passbands: "BP", "G", "RP";
-- 2MASS passbands: "J", "H", "Ks";
-- WISE passbands: "W1", "W2", "W3", "W4".
+*Note*: The band names used in the code need to be consistent with the table. there are `'` in the passbands of SDSS.
+|  Surveys        | Passbands          |
+|  :--:           | :--:               |
+|  GALEX          | FUV, NUV           |
+|  Pan-STARRS 1   | g, r, i, z, y      |
+|  SDSS           | u', g', r', i', z' |
+|  Gaia           | BP, G, RP          |
+|  2MASS          | J, H, Ks           |
+|  WISE           | W1, W2, W3, W4     |
+
 
 # How to Install
 ### Using pip
