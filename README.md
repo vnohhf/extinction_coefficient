@@ -4,26 +4,25 @@
 
 extinction_coefficient is a astronomy Python package to provide **empirical extinction or reddening coefficients** from far-ultraviolet (UV) to the mid-infrared (IR). See our paper for more infomation [(Zhang & Yuan, 2022)](https://ui.adsabs.harvard.edu/abs/2023ApJS..264...14Z/abstract).
 
-For a given band *a*, the extinction coefficient is defined as E(a)/E(B-V), i.e. extinction in *a* band relative to E(B−V);
+For a given band *a*, the extinction coefficient is defined as E(a)/E(B-V), i.e. the ratio of the extinction in *a* band to the color excess of *B−V*;  
 Similarly, for a given color *a-b*, the reddening coefficient is defined as E(a-b)/E(B-V). 
 Note that the E(B-V) in this package is taken directly from the SFD whole-sky 2D dust-reddening map of [Schlegel et al. (1998)](https://ui.adsabs.harvard.edu/abs/1998ApJ...500..525S/abstract).
 
 Our coefficients are mostly valid in the extinction range of 0-0.5 mag and the temperature range 
-of 4000-10000 K. But note that the temperature range varies depending on the band. No extrapolation
-for out-of-range input values, but rather assignment of boundary values. The valid range for each 
-color is listed in Table 4 of [Zhang & Yuan (2022)](https://ui.adsabs.harvard.edu/abs/2023ApJS..264...14Z/abstract).
+of 4000-10000 K. But note that the temperature range varies depending on the band (see Table 4 of [Zhang & Yuan (2022)](https://ui.adsabs.harvard.edu/abs/2023ApJS..264...14Z/abstract)). No extrapolation
+for out-of-range input values, but rather assignment of boundary values. 
 
 ### Available photometric surveys and passband names
 - GALEX passbands: "FUV", "NUV"; 
 - Pan-STARRS 1 passbands: "g", "r", "i", "z", "y"; 
-- SDSS passbands: "u'", "g'", "r'", "i'", "z'";
+- SDSS passbands: "u'", "g'", "r'", "i'", "z'"; (Note the `'` after letter)
 - Gaia DR3 passbands: "BP", "G", "RP";
 - 2MASS passbands: "J", "H", "Ks";
 - WISE passbands: "W1", "W2", "W3", "W4".
 
 # How to Install
 ### Using pip
-~~~python
+~~~
 # from PyPI (recommmand)
 pip install extinction_coefficient
 
@@ -60,7 +59,7 @@ Teff = 5500
 extinction_coefficient(Band,EBV=EBV,Teff=Teff)
 ~~~
 
-If Teff is unknown in advance, the observed (BP-RP) color can be entered as a substitute. This program first makes a rough reddening correction to the observed (BP-RP) and then converts them to Teff using an empirical polynomial relationship between intrinsic color (BP-RP)0 and Teff. This allows the exact reddening factor to be obtained using Teff, and then the procedure iterates once.
+If Teff is unknown in advance, the observed *BP-RP* color can be entered as a substitute. This program first makes a rough reddening correction to the observed *BP-RP* and then converts them to Teff using an empirical polynomial relationship between intrinsic color *(BP-RP)0* and Teff. After a iterate, the exact reddening coefficients is calculated using Teff.
 ~~~python
 Band = ["BP-RP","FUV-g","i'-z'"]
 EBV  = [0.1, 0.3, 0.5]
