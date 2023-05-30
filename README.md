@@ -1,13 +1,17 @@
 # extinction_coefficient
 
-extinction_coefficient is a astronomy Python package to provide **empirical extinction or reddening coefficients** from far-ultraviolet (UV) to the mid-infrared (IR). [(Zhang & Yuan, 2022)](https://ui.adsabs.harvard.edu/abs/2023ApJS..264...14Z/abstract)
+[English](README.md) | [中文](README-zh.md)
+
+extinction_coefficient is a astronomy Python package to provide **empirical extinction or reddening coefficients** from far-ultraviolet (UV) to the mid-infrared (IR). See our paper for more infomation [(Zhang & Yuan, 2022)](https://ui.adsabs.harvard.edu/abs/2023ApJS..264...14Z/abstract).
 
 For a given band *a*, the extinction coefficient is defined as E(a)/E(B-V), i.e. extinction in *a* band relative to E(B−V);
-Similarly, for a given color *a-b*, the reddening coefficient is defined as E(a-b)/E(B-V).
+Similarly, for a given color *a-b*, the reddening coefficient is defined as E(a-b)/E(B-V). 
+Note that the E(B-V) in this package is taken directly from the SFD whole-sky 2D dust-reddening map of [Schlegel et al. (1998)](https://ui.adsabs.harvard.edu/abs/1998ApJ...500..525S/abstract).
 
 Our coefficients are mostly valid in the extinction range of 0-0.5 mag and the temperature range 
 of 4000-10000 K. But note that the temperature range varies depending on the band. No extrapolation
-for out-of-range input values, but rather assignment of boundary values.
+for out-of-range input values, but rather assignment of boundary values. The valid range for each 
+color is listed in Table 4 of [Zhang & Yuan (2022)](https://ui.adsabs.harvard.edu/abs/2023ApJS..264...14Z/abstract).
 
 ### Available photometric surveys and passband names
 - GALEX passbands: "FUV", "NUV"; 
