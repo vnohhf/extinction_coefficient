@@ -2,7 +2,7 @@
 
 [English](README.md) | [中文](README-zh.md)
 
-`extinction_coefficient`是一个天文的Python包，提供远紫外到中红外波段的 *温度和消光依赖的* **经验消光及红化系数**。更多信息见我们的文章[(Zhang & Yuan, 2022)](https://ui.adsabs.harvard.edu/abs/2023ApJS..264...14Z/abstract)。
+`extinction_coefficient`是一个天文的Python包，提供远紫外到中红外波段的 *温度和消光依赖的* **经验尘埃消光及红化系数**。更多信息见我们的文章[(Zhang & Yuan, 2022)](https://ui.adsabs.harvard.edu/abs/2023ApJS..264...14Z/abstract)。
 
 对一个给定的对于一个给定的波段 *a* ，消光系数被定义为 E(a)/E(B-V)，即 *a* 波段的消光与 *B-V* 色余之比；  
 类似地，对于一个给定的颜色 *a-b* ，红化系数被定义为 E(a-b)/E(B-V)。
