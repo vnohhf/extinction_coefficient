@@ -6,7 +6,7 @@
 
 对一个给定的对于一个给定的波段 *a* ，消光系数被定义为 E(a)/E(B-V)，即 *a* 波段的消光与 *B-V* 色余之比；  
 类似地，对于一个给定的颜色 *a-b* ，红化系数被定义为 E(a-b)/E(B-V)。
-本软件包中的 E(B-V )是直接取自SFD全天二维尘埃红化图 [Schlegel et al. (1998)](https://ui.adsabs.harvard.edu/abs/1998ApJ...500..525S/abstract)。
+本软件包中的 E(B-V) 是直接取自SFD全天二维尘埃红化图 [Schlegel et al. (1998)](https://ui.adsabs.harvard.edu/abs/1998ApJ...500..525S/abstract)。
 
 我们的系数在 0 - 0.5 mag 的消光范围和 4000 - 10000 K 的温度范围内大多有效，但具体温度范围因波段而异（见文章中表4）。
 对于超出范围的输入值，我们没有对函数进行外推，而是分配边界值。
@@ -14,7 +14,7 @@
 ### 可用的测光巡天项目和波段名称
 - GALEX passbands: "FUV", "NUV"; 
 - Pan-STARRS 1 passbands: "g", "r", "i", "z", "y"; 
-- SDSS passbands: "u'", "g'", "r'", "i'", "z'";
+- SDSS passbands: "u'", "g'", "r'", "i'", "z'"; (此处字母后还有一个`'`)
 - Gaia DR3 passbands: "BP", "G", "RP";
 - 2MASS passbands: "J", "H", "Ks";
 - WISE passbands: "W1", "W2", "W3", "W4".
