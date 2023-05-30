@@ -45,7 +45,7 @@ extinction_coefficient('BP-RP', mode='simple')
 extinction_coefficient(["BP-RP","FUV-g"], mode='simple')
 ~~~
 
-获得某个/一组 Teff 和 E(B-V) 时的消光或红化系数:
+获得某个/一组 Teff 和 E(B-V) 时的消光或红化系数:  
 （如果Teff 和 E(B-V) 的输入均使用数组，那么他们的长度应该保持一致）
 ~~~python
 Band = 'BP'
@@ -77,7 +77,7 @@ Args:
             The passband or color index. If color index are entered, '-' need to be used to connect 
             the two passband name strings (e.g. "BP-RP"). There support GALEX passbands: "FUV", "NUV"; 
             Pan-STARRS 1 passbands: "g", "r", "i", "z", "y"; 
-            SDSS passbands: "u'", "g'", "r'", "i'", "z'";
+            SDSS passbands: "u'", "g'", "r'", "i'", "z'"; (此处字母后还有一个')
             Gaia DR3 passbands: "BP", "G", "RP";
             2MASS passbands: "J", "H", "Ks";
             WISE passbands: "W1", "W2", "W3", "W4";
