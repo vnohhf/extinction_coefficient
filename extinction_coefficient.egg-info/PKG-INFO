@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: extinction-coefficient
-Version: 1.7
+Version: 1.8
 Summary: A package to inquire empirical extinction or reddening coefficients from far-ultraviolet (UV) to the mid-infrared (IR)
 Home-page: https://github.com/vnohhf/extinction_coeffcient
 Author: Zhang,Ruoyi
