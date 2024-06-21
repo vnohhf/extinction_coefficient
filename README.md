@@ -8,7 +8,7 @@ For a given band *a*, the extinction coefficient is defined as E(a)/E(B-V), i.e.
 Similarly, for a given color *a-b*, the reddening coefficient is defined as E(a-b)/E(B-V). 
 Note that the E(B-V) in this package is taken directly from the SFD whole-sky 2D dust-reddening map of [Schlegel et al. (1998)](https://ui.adsabs.harvard.edu/abs/1998ApJ...500..525S/abstract).
 
-Our coefficients are mostly valid in the extinction range of 0-0.5 mag and the temperature range 
+Our coefficients are mostly valid in the E(B-V) range of 0-0.5 mag and the temperature range 
 of 4000-10000 K. But note that the temperature range varies depending on the band (see Table 4 of [Zhang & Yuan (2022)](https://ui.adsabs.harvard.edu/abs/2023ApJS..264...14Z/abstract)). No extrapolation
 for out-of-range input values, but rather assignment of boundary values. 
 
